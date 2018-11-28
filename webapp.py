@@ -1,4 +1,4 @@
-from flask import Flask, url_for, render_template, request
+from flask import Flask, url_for, render_template
 
 app = Flask(__name__) #__name__ = "__main__" if this is the file that was run.  Otherwise, it is the name of the file (ex. webapp)
 
@@ -6,31 +6,17 @@ app = Flask(__name__) #__name__ = "__main__" if this is the file that was run.  
 def render_main():
     return render_template('home.html')
 
-@app.route("/response")
-def render_response():
-    BitCoin = float(request.args['BitCoin'])
-    reply = BitCoin * 6403.73
-    return render_template('response.html',response='$' + str(reply))
     
 @app.route("/page1")
-def render_er():
+def render_page1():
     return render_template('page1.html')
     
-@app.route("/response1")
-def render_response1():
-    Kilometer = float(request.args['Kilometer'])
-    reply = Kilometer * 1093.61
-    return render_template('response.html',response=str(reply))
    
 @app.route("/page2")
-def render_q():
+def render_page2():
     return render_template('page2.html')
     
-@app.route("/response2")
-def render_response2():
-    pounds = float(request.args['pounds'])
-    reply = pounds * 0.453592 
-    return render_template('response.html',response=str(reply))
+
 
     
     #The request object stores information about the request sent to the server.
